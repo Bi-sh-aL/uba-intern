@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+    --blue:#3498db;
+    --dark-blue:#2980b9;
+    --red:#e74c3c;
+    --dark-red:#c0392b;
+    --black:#333;
+    --white:#fff;
+    --light-bg:#eee;
+    --box-shadow:0 5px 10px rgba(0,0,0,.1);
+ } 
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background-color: var(--white);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.container h2{
+    text-align: center;
+}
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input-group {
+    flex: 1 1 45%;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 99%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+button[type="submit"], .back-button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--dark-blue);
+}
+
+.back-button {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.back-button:hover {
+    background-color: var(--dark-red);
+}
+
+.error-message {
+    color: var(--red);
+    font-size: 0.875em;
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .input-group {
+        flex: 1 1 100%;
+    }
+}

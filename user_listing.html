@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Listing Page</title>
+  <link rel="stylesheet" href="css/list.css">
+</head>
+<body>
+  <div class="container">
+    <h2>User Listing</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone No.</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="First Name">Bishal</td>
+          <td data-label="Last Name">Shrestha</td>
+          <td data-label="Username">bishal</td>
+          <td data-label="Email">bsal.123@example.com</td>
+          <td data-label="Phone No.">9818326547</td>
+          <td class="action-buttons">
+            <a href="#" class="update" onclick="updateUser()">Update</a> 
+            <a href="#" class="delete" onclick="deleteUser()">Delete</a>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="First Name">Kumar</td>
+          <td data-label="Last Name">Karki</td>
+          <td data-label="Username">karkikumar</td>
+          <td data-label="Email">karki.kumar@example.com</td>
+          <td data-label="Phone No.">9876543210</td>
+          <td class="action-buttons">
+            <a href="#" class="update" onclick="updateUser()">Update</a> 
+            <a href="#" class="delete" onclick="deleteUser()">Delete</a>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="First Name">Ram</td>
+          <td data-label="Last Name">Basnet</td>
+          <td data-label="Username">rbasnet</td>
+          <td data-label="Email">basnet.4456@example.com</td>
+          <td data-label="Phone No.">9841000222</td>
+          <td class="action-buttons">
+            <a href="#" class="update" onclick="updateUser()">Update</a> 
+            <a href="#" class="delete" onclick="deleteUser()">Delete</a>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="First Name">Ashol</td>
+          <td data-label="Last Name">Karki</td>
+          <td data-label="Username">karki2624</td>
+          <td data-label="Email">karkiashol473r@example.com</td>
+          <td data-label="Phone No.">9808369158</td>
+          <td class="action-buttons">
+            <a href="#" class="update" onclick="updateUser()">Update</a> 
+            <a href="#" class="delete" onclick="deleteUser()">Delete</a>
+          </td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function updateUser() {
+      // Add your update logic here
+      alert("Update button clicked");
+    }
+
+    function deleteUser() {
+      // Add your delete logic here
+      alert("Delete button clicked");
+    }
+  </script>
+</body>
+</html>

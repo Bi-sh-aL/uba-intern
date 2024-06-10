@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="signupForm" onsubmit="return validateSignupForm()">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <label for="signupUsername">Username</label>
+                    <input type="text" id="signupUsername" name="signupUsername" placeholder="Enter username">
+                    <span class="error-message" id="signupUsernameError"></span>
+                </div>
+                <div class="input-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="text" id="signupEmail" name="signupEmail" placeholder="Enter email address">
+                    <span class="error-message" id="signupEmailError"></span>
+                </div>
+                <div class="input-group">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input type="text" id="mobileNumber" name="mobileNumber" placeholder="Enter mobile number">
+                    <span class="error-message" id="mobileNumberError"></span>
+                </div>
+                <div class="input-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="signupPassword" placeholder="Enter password">
+                    <span class="error-message" id="signupPasswordError"></span>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confrim password">
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+                
+                <button type="submit">Sign Up</button>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
