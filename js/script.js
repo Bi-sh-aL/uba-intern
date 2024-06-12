@@ -38,7 +38,7 @@ function validateLoginForm() {
 }
 
 
-//Sign up form registration
+//Sign up form validation
 function validateSignupForm() {
     const username = document.getElementById('signupUsername').value;
     const email = document.getElementById('signupEmail').value;
@@ -127,17 +127,144 @@ function validateSignupForm() {
     return isValid;
 }
 
+// Profile edit validation
+function validateProfileForm() {
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const currentPassword = document.getElementById('currentPassword').value;
+    const newPassword = document.getElementById('newPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    let isValid = true;
+
+    if (firstName.trim() === '') {
+        document.getElementById('firstNameError').textContent = 'First Name is required';
+        document.getElementById('firstNameError').style.display = 'block';
+        document.getElementById('firstName').classList.add('border-color');
+        isValid = false;
+    } else {
+        document.getElementById('firstNameError').style.display = 'none';
+    }
+
+    if (lastName.trim() === '') {
+        document.getElementById('lastNameError').textContent = 'Last Name is required';
+        document.getElementById('lastNameError').style.display = 'block';
+        document.getElementById('lastName').classList.add('border-color');
+        isValid = false;
+    } else {
+        document.getElementById('lastNameError').style.display = 'none';
+    }
+
+    if (username.trim() === '') {
+        document.getElementById('usernameError').textContent = 'Username is required';
+        document.getElementById('usernameError').style.display = 'block';
+        document.getElementById('username').classList.add('border-color');
+        isValid = false;
+    } else {
+        document.getElementById('usernameError').style.display = 'none';
+    }
+    
+    if (email.trim()=='') {
+        document.getElementById('emailError').textContent = 'Email address is required';
+        document.getElementById('emailError').style.display = 'block';
+        document.getElementById('email').classList.add('border-color');
+        isValid = false;
+    }
+    else if (!validateEmail(email)) {
+        document.getElementById('emailError').textContent = 'Invalid email address';
+        document.getElementById('emailError').style.display = 'block';
+        document.getElementById('email').classList.add('border-color');
+        isValid = false;
+    } else {
+        document.getElementById('emailError').style.display = 'none';
+    }
+    
+    if (phone.trim()=='') {
+        document.getElementById('phoneError').textContent = 'Mobile number is required';
+        document.getElementById('phoneError').style.display = 'block';
+        document.getElementById('phone').classList.add('border-color');
+        isValid = false;
+    }
+    else if (!validatePhone(phone)) {
+        document.getElementById('phoneError').textContent = 'Invalid mobile number';
+        document.getElementById('phoneError').style.display = 'block';
+        document.getElementById('phone').classList.add('border-color');
+        isValid = false;
+    } else {
+        document.getElementById('phoneError').style.display = 'none';
+    }
+
+
+    if(currentPassword.trim()===''){
+        document.getElementById('currentPasswordError').textContent = 'Please enter your old password';
+        document.getElementById('currentPasswordError').style.display = 'block';
+        document.getElementById('currentPassword').classList.add('border-color')
+        isValid = false;  
+    }
+    
+    else if (currentPassword.length < 6) {
+        document.getElementById('currentPasswordError').textContent = 'Current password must be at least 6 characters';
+        document.getElementById('currentPasswordError').style.display = 'block';
+        document.getElementById('currentPassword').classList.add('border-color');
+        isValid = false;
+    } else {
+        document.getElementById('currentPasswordError').style.display = 'none';
+    }
+    
+    if(newPassword.trim() === ''){
+        document.getElementById('newPasswordError').textContent = 'Please enter new password';
+        document.getElementById('newPasswordError').style.display = 'block';
+        document.getElementById('newPassword').classList.add('border-color')
+        isValid = false;  
+    }
+    else if(!validatePassword(newPassword)){
+        document.getElementById('newPasswordError').textContent = 'Password must contain atleast one UPPERCASE, one number and one special character';
+        document.getElementById('newPasswordError').style.display = 'block';
+        document.getElementById('newPassword').classList.add('border-color')
+        isValid = false;  
+    }
+    else if(newPassword.length > 0 && newPassword.length < 6) {
+        document.getElementById('newPasswordError').textContent = 'New password must be at least 6 characters';
+        document.getElementById('newPasswordError').style.display = 'block';
+        document.getElementById('newPassword').classList.add('border-color');
+        isValid = false;
+    }
+    else if (newPassword === currentPassword) {
+        document.getElementById('newPasswordError').textContent = 'New password cannot be the same as the current password';
+        document.getElementById('newPasswordError').style.display = 'block';
+        document.getElementById('newPassword').classList.add('border-color');
+        isValid = false;
+    }
+     else {
+        document.getElementById('newPasswordError').style.display = 'none';
+    }
+
+
+    if (newPassword !== confirmPassword) {
+        document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+        document.getElementById('confirmPasswordError').style.display = 'block';
+        document.getElementById('confirmPassword').classList.add('border-color');
+        isValid = false;
+    } else {
+        document.getElementById('confirmPasswordError').style.display = 'none';
+    }
+
+    return isValid;
+}
+
 function validatePassword(){
     const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{6,}$/;
     return passwordPattern.test();
 }
 
 function validateEmail(email) {
-    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    return re.test(String(email).toLowerCase());
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return emailPattern.test(String(email).toLowerCase());
 }
 
 function validateMobileNumber(mobileNumber) {
-    const re = /^[0-9]{10}$/;
-    return re.test(String(mobileNumber));
+    const mobilePattern = /^[0-9]{10}$/;
+    return mobilePattern.test(String(mobileNumber));
 }
