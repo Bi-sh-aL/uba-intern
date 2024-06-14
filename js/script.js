@@ -18,6 +18,7 @@ function validateLoginForm() {
         isValid = false;
     } else {
         document.getElementById('loginEmailError').style.display = 'none';
+        document.getElementById('loginEmail').classList.remove('border-color')
     }
     
     if (password.trim()=='') {
@@ -32,6 +33,7 @@ function validateLoginForm() {
         isValid = false;
     } else {
         document.getElementById('loginPasswordError').style.display = 'none';
+        document.getElementById('loginPassword').classList.remove('border-color')
     }
 
     return isValid;
@@ -50,16 +52,17 @@ function validateSignupForm() {
     if (username.trim() === '') {
         document.getElementById('signupUsernameError').textContent = 'Username is required';
         document.getElementById('signupUsernameError').style.display = 'block';
-        document.getElementById('signupUsername').classList.add('border-color')
+        document.getElementById('signupUsername').classList.add('border-color');
         isValid = false;
     } else {
         document.getElementById('signupUsernameError').style.display = 'none';
+        document.getElementById('signupUsername').classList.remove('border-color');
     }
     
     if(email.trim() == ''){
         document.getElementById('signupEmailError').textContent = 'Email address is required';
         document.getElementById('signupEmailError').style.display = 'block';
-        document.getElementById('signupEmail').classList.add('border-color')
+        document.getElementById('signupEmail').classList.add('border-color');
         isValid = false;
     }
     else if (!validateEmail(email)) {
@@ -69,13 +72,14 @@ function validateSignupForm() {
         isValid = false;
     } else {
         document.getElementById('signupEmailError').style.display = 'none';
+        document.getElementById('signupEmail').classList.remove('border-color');
     }
 
 
     if (password.trim()=='') {
         document.getElementById('signupPasswordError').textContent = 'Password is required';
         document.getElementById('signupPasswordError').style.display = 'block';
-        document.getElementById('signupPassword').classList.add('border-color')
+        document.getElementById('signupPassword').classList.add('border-color');
         isValid = false;
     }
     else if (password.length < 6) {
@@ -98,6 +102,7 @@ function validateSignupForm() {
     }
      else {
         document.getElementById('signupPasswordError').style.display = 'none';
+        document.getElementById('signupPassword').classList.remove('border-color');
     }
 
     if (password !== confirmPassword) {
@@ -122,6 +127,7 @@ function validateSignupForm() {
         isValid = false;
     } else {
         document.getElementById('mobileNumberError').style.display = 'none';
+        document.getElementById('mobileNumber').classList.remove('border-color')
     }
 
     return isValid;
@@ -146,6 +152,7 @@ function validateProfileForm() {
         isValid = false;
     } else {
         document.getElementById('firstNameError').style.display = 'none';
+        document.getElementById('firstName').classList.remove('border-color');
     }
 
     if (lastName.trim() === '') {
@@ -164,6 +171,7 @@ function validateProfileForm() {
         isValid = false;
     } else {
         document.getElementById('usernameError').style.display = 'none';
+        document.getElementById('lastName').classList.remove('border-color');
     }
     
     if (email.trim()=='') {
@@ -179,6 +187,7 @@ function validateProfileForm() {
         isValid = false;
     } else {
         document.getElementById('emailError').style.display = 'none';
+        document.getElementById('email').classList.remove('border-color');
     }
     
     if (phone.trim()=='') {
@@ -194,13 +203,14 @@ function validateProfileForm() {
         isValid = false;
     } else {
         document.getElementById('phoneError').style.display = 'none';
+        document.getElementById('phone').classList.remove('border-color');
     }
 
 
     if(currentPassword.trim()===''){
         document.getElementById('currentPasswordError').textContent = 'Please enter your old password';
         document.getElementById('currentPasswordError').style.display = 'block';
-        document.getElementById('currentPassword').classList.add('border-color')
+        document.getElementById('currentPassword').classList.add('border-color');
         isValid = false;  
     }
     
@@ -211,6 +221,7 @@ function validateProfileForm() {
         isValid = false;
     } else {
         document.getElementById('currentPasswordError').style.display = 'none';
+        document.getElementById('currentPassword').classList.remove('border-color');
     }
     
     if(newPassword.trim() === ''){
@@ -239,6 +250,7 @@ function validateProfileForm() {
     }
      else {
         document.getElementById('newPasswordError').style.display = 'none';
+        document.getElementById('newPassword').classList.remove('border-color')
     }
 
 
@@ -249,6 +261,7 @@ function validateProfileForm() {
         isValid = false;
     } else {
         document.getElementById('confirmPasswordError').style.display = 'none';
+        document.getElementById('confirmPassword').classList.remove('border-color');
     }
 
     return isValid;
