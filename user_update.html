@@ -3,58 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Profile</title>
-    <link rel="stylesheet" href="css/profile.css">
+    <title>User Profile Edit Page</title>
+    <link rel="stylesheet" href="src/output.css">
+    <style>
+        .border-color{
+    border-color: red;
+   }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-          <h2>Update Profile</h2>
-            <form id="profileForm" onsubmit="return validateProfileForm()">
-                <div class="input-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" name="firstName" placeholder="Enter first name">
-                    <span class="error-message" id="firstNameError"></span>
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+        <div class="w-full max-w-md rounded-lg shadow-md p-6 bg-white">
+        <h2 class="text-2xl font-bold text-center mb-4">Edit Profile</h2>
+        
+            <form class="flex flex-wrap justify-between" action="" id="profileForm" onsubmit="return validateProfileForm()">
+                <div class="mb-4">
+                    <label class="font-bold block mb-2" for="firstName">First Name</label>
+                    <input class="border w-full py-2 px-2 text-gray-700 shadow rounded" type="text" id="firstName" name="firstName" placeholder="Enter first name">
+                    <span class="text-red-600 text-sm mt-2 text-wrap" id="firstNameError"></span>
                 </div>
-                <div class="input-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" placeholder="Enter last name">
-                    <span class="error-message" id="lastNameError"></span>
+                <div class="mb-4">
+                    <label class="font-bold block mb-2" for="lastName">Last Name</label>
+                    <input class="border w-full py-2 px-2 text-gray-700 shadow rounded" type="text" id="lastName" name="lastName" placeholder="Enter last name">
+                    <span class="text-red-600 text-sm mt-2 text-wrap" id="lastNameError"></span>
                 </div>
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter username">
-                    <span class="error-message" id="usernameError"></span>
+                <div class="mb-4">
+                    <label class="font-bold block mb-2" for="username">Username</label>
+                    <input class="border w-full py-2 px-2 text-gray-700 shadow rounded" type="text" id="username" name="username" placeholder="Enter username">
+                    <span class="text-red-600 text-sm mt-2 text-wrap" id="usernameError"></span>
                 </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" placeholder="Enter email address">
-                    <span class="error-message" id="emailError"></span>
+                <div class="mb-4">
+                    <label class="font-bold block mb-2" for="email">Email</label>
+                    <input class="border w-full py-2 px-2 text-gray-700 shadow rounded" type="text" id="email" name="email" placeholder="Enter email address">
+                    <span class="text-red-600 text-sm mt-2 text-wrap" id="emailError"></span>
                 </div>
-                <div class="input-group">
-                    <label for="phone">Mobile Number</label>
-                    <input type="text" id="phone" name="phone" placeholder="Enter mobile number">
-                    <span class="error-message" id="phoneError"></span>
+                <div class="mb-4">
+                    <label class="font-bold block mb-2" for="phone">Mobile Number</label>
+                    <input class="border w-full py-2 px-2 text-gray-700 shadow rounded" type="text" id="phone" name="phone" placeholder="Enter mobile number">
+                    <span class="text-red-600 text-sm mt-2 text-wrap" id="phoneError"></span>
                 </div>
-                <div class="input-group">
-                    <label for="currentPassword">Old Password</label>
-                    <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password">
-                    <span class="error-message" id="currentPasswordError"></span>
+                <div class="mb-4">
+                    <label class="font-bold block mb-2" for="currentPassword">Old Password</label>
+                    <input class="border w-full py-2 px-2 text-gray-700 shadow rounded" type="text" id="currentPassword" name="currentPassword" placeholder="Enter your old password">
+                    <span class="text-red-600 text-sm mt-2 text-wrap" id="currentPasswordError"></span>
                 </div>
-                <div class="input-group">
-                    <label for="newPassword">New Password</label>
-                    <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password">
-                    <span class="error-message" id="newPasswordError"></span>
+                <div class="mb-4">
+                    <label class="font-bold block mb-2" for="newPassword">New Password</label>
+                    <input class="border w-full py-2 px-2 text-gray-700 shadow rounded" type="text" id="newPassword" name="newPassword" placeholder="Enter new password">
+                    <span class="text-red-600 text-sm mt-2 text-wrap" id="newPasswordError"></span>
                 </div>
-                <div class="input-group">
-                    <label for="confirmPassword">Confirm New Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password">
-                    <span class="error-message" id="confirmPasswordError"></span>
+                <div class="mb-4">
+                    <label class="font-bold block mb-2" for="confirmPassword">Confirm Password</label>
+                    <input class="border w-full py-2 px-2 text-gray-700 shadow rounded" type="text" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password">
+                    <span class="text-red-600 text-sm mt-2 text-wrap" id="confirmPasswordError"></span>
                 </div>
-                <button type="submit">Update Profile</button>
+                <button type="submit" class="btn bg-blue-500 w-full text-white py-2 rounded hover:bg-blue-700">Update Profile</button>
             </form>
         </div>
     </div>
-    <script src="js/profile.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
